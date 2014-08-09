@@ -2,7 +2,8 @@ require 'test_helper'
 
 module Ledger
   class AccountTest < ActiveSupport::TestCase
-    fixtures 'ledger/accounts'
+    fixtures 'ledger/accounts', 'ledger/entries'
+    fixtures 'quantity/types', 'quantity/units', 'quantity/values'
     test 'presence of name' do
       account = Account.new(name: nil)
       assert account.invalid?
@@ -16,7 +17,9 @@ module Ledger
     end
 
     test 'valid' do
-      account = Account.new(name: 'Financeiro', account: ledger_accounts(:principal))
+      parent = ledger_accounts(:principal)
+      unit = quantity_units(:real)
+      account = Account.new(name: 'Financeiro', account: parent, unit: unit)
       assert account.valid?
     end
 
@@ -25,9 +28,9 @@ module Ledger
       assert_equal 1, account.accounts.length
     end
 
-    # test 'balance' do
-    #   account = ledger_accounts(:estoque)
-    #   assert_equal 1, account.balance
-    # end
+    test 'balance' do
+      account = ledger_accounts(:estoque)
+      assert_equal 0, account.balance
+    end
   end
 end

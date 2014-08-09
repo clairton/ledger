@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140809144200) do
   create_table "ledger_accounts", force: true do |t|
     t.string   "name",                     null: false
     t.integer  "account_id",               null: false
+    t.integer  "unit_id",                  null: false
     t.decimal  "balance",    default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -11,7 +11,8 @@ gemspec
 # your gem to rubygems.org.
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+
 gem 'quantity', git: 'https://github.com/clairton/quantity.git'
 
 gem 'rails-observers'

@@ -2,7 +2,9 @@ principal:
   id: 1
   name: Principal
   account_id: 1
+  unit: un
 
 estoque:
   name: Estoque
   account: principal
+  unit: un

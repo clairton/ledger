@@ -3,11 +3,9 @@ module Ledger
     belongs_to :account
     has_many :accounts
     has_many :entries
-    validates :name, :account, presence: true
-    validates :name, uniqueness: true
+    belongs_to :unit, class: Quantity::Unit
 
-    def balance
-      
-    end
+    validates :name, :balance, :account, :unit, presence: true
+    validates :name, uniqueness: true
   end
 end
