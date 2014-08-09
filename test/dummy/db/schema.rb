@@ -11,11 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809125958) do
+ActiveRecord::Schema.define(version: 20140809144200) do
 
   create_table "ledger_accounts", force: true do |t|
-    t.string   "name",       null: false
-    t.integer  "account_id", null: false
+    t.string   "name",                     null: false
+    t.integer  "account_id",               null: false
+    t.decimal  "balance",    default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -23,6 +24,13 @@ ActiveRecord::Schema.define(version: 20140809125958) do
   create_table "ledger_entries", force: true do |t|
     t.integer  "account_id", null: false
     t.integer  "value_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ledger_transactions", force: true do |t|
+    t.integer  "in_id",      null: false
+    t.integer  "out_id",     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

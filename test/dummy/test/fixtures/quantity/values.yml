@@ -3,9 +3,9 @@ entrada:
   unit: un
 
 saida:
-  amount: 1
+  amount: -1
   unit: dz
 
 saida2:
-  amount: 1
+  amount: -1
   unit: un

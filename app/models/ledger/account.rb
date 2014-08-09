@@ -7,7 +7,7 @@ module Ledger
     validates :name, uniqueness: true
 
     def balance
-
+      
     end
   end
 end
