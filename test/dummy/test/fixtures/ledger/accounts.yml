@@ -1,0 +1,8 @@
+principal:
+  id: 1
+  name: Principal
+  account_id: 1
+
+estoque:
+  name: Estoque
+  account: principal

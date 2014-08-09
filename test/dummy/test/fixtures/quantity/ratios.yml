@@ -1,0 +1,24 @@
+mn_to_hr:
+  origin: mn
+  destiny: hr
+  formula: x / 60
+
+mt_to_km:
+  origin: mt
+  destiny: km
+  formula: x / 1000
+
+km_to_mi:
+  origin: km
+  destiny: mi
+  formula: x / 1.609344
+
+real_to_dolar:
+  origin: real
+  destiny: dolar
+  formula: x / 2.89
+
+celsius_to_fahrenheit:
+  origin: celcius
+  destiny: fahrenheit
+  formula: (x * 1.8) + 32

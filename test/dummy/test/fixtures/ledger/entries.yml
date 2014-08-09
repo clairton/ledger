@@ -1,0 +1,7 @@
+entrada:
+  account: estoque
+  value: entrada
+
+saida:
+  account: estoque
+  value: saida

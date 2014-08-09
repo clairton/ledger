@@ -1,0 +1,23 @@
+tempo:
+  name: Tempo
+
+distancia:
+  name: Distancia
+
+temperatura:
+  name: Temperatura
+
+massa:
+  name: Massa
+
+velocidade:
+  name: Velocidade
+
+monetario:
+  name: Monetário
+
+volume:
+  name: Volume
+
+unidade:
+  name: Unidade
