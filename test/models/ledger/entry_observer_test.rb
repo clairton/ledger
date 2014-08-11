@@ -15,7 +15,7 @@ module Ledger
 
     test 'decrement account balance' do
       account = ledger_accounts(:estoque)
-      value = quantity_values(:saida2)
+      value = quantity_values(:saida_estoque2)
       expected = ledger_accounts(:estoque).balance - 1
       entry = Entry.create(account: account, value: value)
       assert expected, entry.account.balance
@@ -29,12 +29,13 @@ module Ledger
       observer.before_save(entry)
       assert entry.errors.has_key? :account
       assert entry.invalid?
+      assert !entry.valid?
     end
 
     test 'simple' do
       observer = EntryObserver.instance
       account = ledger_accounts(:estoque)
-      value = quantity_values(:saida2)
+      value = quantity_values(:saida_estoque2)
       expected = ledger_accounts(:estoque).balance - 1
       entry = Entry.create(account: account, value: value)
       observer.before_save(entry)

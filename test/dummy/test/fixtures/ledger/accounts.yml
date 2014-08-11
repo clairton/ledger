@@ -8,3 +8,8 @@ estoque:
   name: Estoque
   account: principal
   unit: un
+
+producao:
+  name: Produção
+  account: principal
+  unit: un

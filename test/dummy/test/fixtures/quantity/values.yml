@@ -1,11 +1,27 @@
-entrada:
+entrada_estoque:
   amount: 13
   unit: un
 
-saida:
+saida_estoque:
   amount: -1
   unit: dz
 
-saida2:
+saida_estoque2:
   amount: -1
+  unit: un
+
+saida_estoque3:
+  amount: -1
+  unit: un
+
+saida_producao:
+  amount: 13
+  unit: un
+
+entrada_venda:
+  amount: 1
+  unit: dz
+
+entrada_venda2:
+  amount: 1
   unit: un

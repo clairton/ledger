@@ -6,6 +6,14 @@ module Ledger
       ratio = Quantity::Ratio.find_by(destiny: destiny, origin: origin)
       if ratio.nil?
         entry.errors.add('account', :invalid)
+        class << entry
+          def invalid?
+            true
+          end
+          def valid?
+            false
+          end
+        end
       else
         value = ratio.to(entry.value.amount)
         entry.account.balance += value

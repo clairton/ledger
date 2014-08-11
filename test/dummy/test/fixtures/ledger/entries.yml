@@ -1,7 +1,15 @@
-entrada:
+entrada_estoque:
   account: estoque
-  value: entrada
+  value: entrada_estoque
 
-saida:
+saida_estoque:
   account: estoque
-  value: saida
+  value: saida_estoque
+
+saida_estoque2:
+  account: estoque
+  value: saida_estoque2
+
+saida_producao:
+  account: producao
+  value: saida_producao

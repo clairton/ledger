@@ -1,9 +1,3 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  in_id: 1
-  out_id: 1
-
-two:
-  in_id: 1
-  out_id: 1
+  in: entrada_estoque
+  out: saida_producao
