@@ -87,3 +87,15 @@ un:
   symbol: un
   position: after
   type: unidade
+
+centena:
+  name: Centena
+  symbol: centena
+  position: after
+  type: unidade
+
+milheiro:
+  name: Milheiro
+  symbol: milheiro
+  position: after
+  type: unidade

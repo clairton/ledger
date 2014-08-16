@@ -2,6 +2,10 @@ entrada_estoque:
   amount: 13
   unit: un
 
+entrada_estoque2:
+  amount: 1
+  unit: un
+
 saida_estoque:
   amount: -1
   unit: dz
@@ -24,4 +28,12 @@ entrada_venda:
 
 entrada_venda2:
   amount: 1
+  unit: un
+
+saida_producao2:
+  amount: 1
+  unit: centena
+
+saida_producao3:
+  amount: -1
   unit: un

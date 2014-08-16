@@ -26,10 +26,9 @@ module Ledger
       account = ledger_accounts(:estoque)
       value = Quantity::Value.create(unit: quantity_units(:real), amount: 10)
       entry = Entry.new(account: account, value: value)
-      observer.before_save(entry)
-      assert entry.errors.has_key? :account
-      assert entry.invalid?
-      assert !entry.valid?
+      assert_raise ActiveRecord::RecordNotFound do
+        observer.before_save(entry)
+      end
     end
 
     test 'simple' do

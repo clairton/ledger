@@ -9,29 +9,26 @@ module Ledger
       if inn.unit == out.unit
         balance = inn.amount + out.amount
       else
-        ratio = Quantity::Ratio.for(inn.unit, out.unit)
-        if ratio.nil?
-          aux = inn.unit
-          inn.unit = out.unit
-          out.unit = aux
-          ratio = Quantity::Ratio.for(out.unit, inn.unit)
-          if ratio.nil?
-            message(transaction, 'incompatible units, doesn\'t there\'s ratio between theirs')
-            return
-          end
-          balance = inn.amount + ration.to(out.amount)
+        begin
+          ratio = Quantity::Ratio.for(inn.unit, out.unit)
+          balance = inn.amount + ratio.to(out.amount)
+        rescue ActiveRecord::RecordNotFound => e
+          message(transaction, 'incompatible units, doesn\'t there\'s ratio between theirs')
+          return
         end
-        unless balance == 0
-          message(transaction, 'sum of in and out must be zero')
-        end
+      end
+      unless balance == 0
+        message(transaction, 'sum of in and out must be zero')
       end
     end
 
   private
     def message(transaction, message)
-      [:in, :out].each {|attr|
+      [:in, :out].each do |attr|
         transaction.errors[attr] << message
-      }
+        transaction.send(attr).errors[:value] << message
+        transaction.send(attr).value.errors[:amount] << message
+      end
     end
   end
 end
