@@ -6,11 +6,7 @@ module Ledger
       amount = entry.value.amount
       if origin != destiny
         ratio = Quantity::Ratio.for(origin, destiny)
-        if ratio.nil?
-          entry.errors.add('account', :invalid)
-        else
-          amount = ratio.to(entry.value.amount)
-        end
+        amount = ratio.to(entry.value.amount)
       end
       entry.account.balance += amount
     end

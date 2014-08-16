@@ -7,5 +7,6 @@ module Ledger
     validates :value, :account, presence: true
     validates :value, uniqueness: true
     validates_with EntryCannotZeroValue
+    validates_with EntrySameUnit
   end
 end

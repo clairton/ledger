@@ -21,16 +21,6 @@ module Ledger
       assert expected, entry.account.balance
     end
 
-    test 'invalid ratio' do
-      observer = EntryObserver.instance
-      account = ledger_accounts(:estoque)
-      value = Quantity::Value.create(unit: quantity_units(:real), amount: 10)
-      entry = Entry.new(account: account, value: value)
-      assert_raise ActiveRecord::RecordNotFound do
-        observer.before_save(entry)
-      end
-    end
-
     test 'simple' do
       observer = EntryObserver.instance
       account = ledger_accounts(:estoque)
