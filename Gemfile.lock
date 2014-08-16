@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/clairton/quantity.git
-  revision: 51e1446d9afbda2eb34a0b21f0b64b47efab08d7
+  revision: f3483254c8d8c4b9a165248976bd2b4316e47677
   specs:
     quantity (0.0.1)
       rails (~> 4.1.4)
