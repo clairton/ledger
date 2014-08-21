@@ -19,7 +19,7 @@ saida_estoque3:
   unit: un
 
 saida_producao:
-  amount: 13
+  amount: -13
   unit: un
 
 entrada_venda:

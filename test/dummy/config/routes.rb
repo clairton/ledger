@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Ledger::Engine => "/ledger"
+  mount RailsAdmin::Engine => '/admin', as: :rails_admin
 end

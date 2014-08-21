@@ -29,5 +29,15 @@ module Ledger
       assert transaction.invalid?
       assert transaction.errors.has_key? :out
     end
+
+    test 'to s' do
+      transaction = ledger_transactions(:one)
+      assert_equal 'Produção: -13.0 un -> Estoque: 13.0 un', transaction.to_s
+    end
+
+    test 'valid' do
+      transaction = ledger_transactions(:one)
+      assert transaction.valid?, transaction.errors.first
+    end
   end
 end

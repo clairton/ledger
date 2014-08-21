@@ -27,5 +27,10 @@ module Ledger
       entry = Entry.new(account: ledger_accounts(:estoque), value: quantity_values(:saida_estoque3))
       assert entry.valid?
     end
+
+    test 'to s' do
+      entry = Entry.new(account: ledger_accounts(:estoque), value: quantity_values(:saida_estoque3))
+      assert 'Estoque: -1 un', entry.to_s
+    end
   end
 end

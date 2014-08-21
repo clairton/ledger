@@ -6,10 +6,10 @@ principal:
 
 estoque:
   name: Estoque
-  account: principal
+  account_id: 1
   unit: un
 
 producao:
   name: Produção
-  account: principal
+  account_id: 1
   unit: un

@@ -23,6 +23,12 @@ module Ledger
       assert account.valid?
     end
 
+    test 'to s' do
+      name = 'Chuchu'
+      account = Account.new(name: name)
+      assert name, account.to_s
+    end
+
     test 'accounts' do
       account = ledger_accounts(:principal)
       assert_equal 1, account.accounts.length

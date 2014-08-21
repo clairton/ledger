@@ -1,11 +1,14 @@
 module Ledger
   class Transaction < ActiveRecord::Base
-    include ActiveModel::Validations
-    belongs_to :in, class: Entry
-    belongs_to :out, class: Entry
+    belongs_to :in, class_name: 'Entry'
+    belongs_to :out, class_name: 'Entry'
 
     validates :in, :out, presence: true, uniqueness: true
     validates_with TransactionBalance
     validates_with TransactionTwoAccount
+
+    def to_s
+      "#{try :out} -> #{try :in}"
+    end
   end
 end
