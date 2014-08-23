@@ -31,7 +31,7 @@ module Ledger
 
     test 'accounts' do
       account = ledger_accounts(:principal)
-      assert_equal 1, account.accounts.length
+      assert_equal 3, account.accounts.length
     end
 
     test 'balance' do

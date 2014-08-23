@@ -1,6 +1,7 @@
 module Ledger
   class EntryObserver < ActiveRecord::Observer
     def before_save(entry)
+      debugger
       destiny = entry.account.unit
       origin = entry.value.unit
       amount = entry.value.amount
@@ -9,6 +10,7 @@ module Ledger
         amount = ratio.to(entry.value.amount)
       end
       entry.account.balance += amount
+      entry.account.save
     end
   end
 end

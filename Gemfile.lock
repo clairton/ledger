@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/clairton/quantity.git
-  revision: 8e760666e6c0dfaa064ed7e7a9e73d4217a06b17
+  revision: 52259061c69ec29ddb10aac704d8fd54c2678bae
   specs:
     quantity (0.0.1)
       enumerize
